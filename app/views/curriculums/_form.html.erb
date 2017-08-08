@@ -1,0 +1,13 @@
+<section class="contents mission_select" style="padding-top: 10px;">
+      <h2 class="title make_title">수업만들기 - 플립러닝</h2>
+      <%= form_for(@curriculum, url: @curriculum_url, html:{class: "mission_flip1 mission_flip on"}) do |f| %>
+          <strong class="form_header">커리큘럼 만들기</strong>
+          <%= f.text_field :title,{class: "make_title_text",placeholder: "커리큘럼 제목을 입력해주세요.",maxlength: "50"} %>
+          <span class="title_len">0/50자</span>
+          <%= f.text_area :description,{class: "make_text",placeholder: "커리큘럼 내용을 입력해주세요."} %>
+          <div class="page_btn" style="margin-top:20px;">
+              <p class="btn"><%= link_to '취소', home_path(@category.id) %></p>
+              <p class="btn"><%=f.submit '제출'%></p> 
+          </div>
+      <% end %>
+</section>

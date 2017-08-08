@@ -1,0 +1,63 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.btn2 {
+    margin-top : 10px;
+    display: inline-block;
+    padding: 0 24px;
+    line-height: 40px;
+    background: #6179b7;
+    color: #fff;
+}
+.btn > input {
+    display: block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: white;
+    background: #6179b7;
+    border: 2px solid #6179b7;
+    width: 100px;
+    height: 40px;
+    line-height: 38px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+}
+.right {
+    float: right;
+}
+.curriculum_name {
+    font-size:18px;
+    font-weight:500;
+    margin:20px 0px 0px 0;
+    line-height:35px;
+}
+
+.curriculum_name span{
+    width:14px;
+    height:14px;
+    top:1px;
+    margin-right:6px;
+}
+.curriculum_menu .revise{
+    float:left;
+}
+.curriculum_menu .revise>a{
+    float:left;
+    display:block;
+    height:18px;
+    width:23px;
+    text-indent:-9999em;
+}
+.curriculum_menu .revise .revise_revise{
+    border-right:1px solid #ccc;
+    background:url(../img/common/c_edit.png) no-repeat left center;
+}
+.curriculum_menu .revise .revise_delete{
+    background:url(../img/common/c_delete.png) no-repeat right center;
+}
+.form_header{
+    display:block;
+    font-weight:500;
+    margin-bottom:20px;
+}

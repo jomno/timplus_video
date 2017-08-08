@@ -1,0 +1,73 @@
+  <section class="contents class">
+    <div class="curriculum_name">
+        <span class="class_color" data-color="#58c9b9" style="background: rgb(88, 201, 185);"></span>
+        <%= @title %>
+        <!--<div class="btn right swal">커리큘럼 만들기</div>-->
+        <%=link_to('커리큘럼 만들기',new_curriculum_path(home_id: @category.id),class: "btn2 right") unless action_name=="index"%>
+        <!--<a href="<%#=new_curriculum_path(home_id: @category.id)%>" class="btn right" data-sweet-alert-confirm="Are you Sure?">커리큘럼 만들기</a>-->
+    </div>
+    <div class="contents_box">
+      <div class="class_mission">
+        <% @curriculums.each do |curriculum| %>
+           <div class="class_misson" id="mission_2284" style="display: block;"><!--class_misson (수업목록)-->
+            <a  href="<%=curriculum_path(curriculum.category.id,curriculum.id)%>">
+                <table class="misson_info">
+                   <tbody>
+                        <tr>
+                            <th class="misson_type">
+                                <span class="misson_type_name type2" style="padding-left:6px;padding-right:6px; width:auto;"><%= curriculum.user.email %></span>
+                                <span>|</span>
+                                <span><%= curriculum.created_at.strftime('%-d %B %Y %H:%M:%S') %></span>
+                            </th>
+                        </tr>
+                        <tr class="misson_title">
+                           <td>
+                               <p><%= curriculum.title %></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </a>
+        </div>
+        <% end %>
+       
+      </div>
+    </div>
+  </section>
+
+
+<!--<% if @curriculums.any? %>-->
+<!--  <div class="container" >-->
+<!--    <h1><%= @title %>-->
+<!--    <div class="pull-right">-->
+<!--      <% unless action_name == "index"%>-->
+<!--      <%= link_to 'New Curriculum', new_curriculum_path(home_id: @category.id),class: "btn btn-default"  %>-->
+<!--      <% end %>-->
+      
+<!--    </div>-->
+<!--    </h1>-->
+    
+<!--    <div id="player-wrapper"></div>-->
+<!--    <% @curriculums.in_groups_of(3) do |group| %>-->
+<!--      <div class="row">-->
+<!--        <% group.each do |curriculum| %>-->
+<!--          <% if curriculum %>-->
+<!--            <div class="col-md-4">-->
+<!--              <div class="thumbnail">-->
+<!--                <img src="https://placehold.it/350x200"></img>-->
+<!--                <div class="caption">-->
+<!--                  <h3><%= curriculum.category.name %><%=badge_helper(curriculum.articles.size)%></h3>-->
+<!--                  <h5><%= curriculum.title %></h5>-->
+<!--                  <% unless curriculum.published_at.nil? %>-->
+<!--                     <p>Published at <%= curriculum.published_at.strftime('%-d %B %Y %H:%M:%S') %></p>-->
+<!--                  <% end %>-->
+<!--                  <p><a href="<%=curriculum_path(curriculum.category.id,curriculum.id)%>" class="btn btn-primary" role="button">보러가기</a> <a href="<%= edit_curriculum_path(curriculum.category.id,curriculum.id)%>" class="btn btn-default" role="button">수정하기</a></p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          <% end %>-->
+<!--        <% end %>-->
+<!--      </div>-->
+<!--    <% end %>-->
+<!--  </div>-->
+<!--<% end %>-->

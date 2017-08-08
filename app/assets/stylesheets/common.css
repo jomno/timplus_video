@@ -1,0 +1,338 @@
+@import url(header.css);
+.wrap{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    min-width:1007px;
+    min-height:100%;
+    z-index:10;
+    background:url(body_bg.gif);
+    overflow-x:hidden;
+}
+.timPlus_aside{
+    position:fixed;
+    width:240px;
+    height:100%;
+    background:#38404e;
+    z-index:999;
+    top:0;
+    left:0;
+    box-sizing:border-box;
+    border:1px solid #454d5d;
+    border-left-color:#3e4654;
+    border-right-color:#3e4654;
+    border-bottom-color:#38404e;
+}
+.timPlus_aside .timPlus_nav1{
+    position:absolute;
+    top:57px;
+    left:-1px;
+    width:240px;
+    z-index:100;
+}
+.timPlus_my{
+    overflow:hidden;
+    text-align:center;
+    box-sizing:border-box;
+    padding:15px 25px;
+    border-bottom:1px solid #2c323c;
+}
+.timPlus_my a{
+   display:block;
+   color:#fff;
+   line-height:50px;
+   font-size:13px;
+   background:#6165b7;
+   border-radius:5px;
+   font-weight:600;
+}
+.timPlus_my a:hover{
+   background:#7176d4;
+}
+.timPlus_class_list{
+  border-top:1px solid #454d5d;  
+}
+.timPlus_class_list ul li a{
+    display:block;
+    line-height:48px;
+    color:#c6d3dd;
+    font-size:14px;
+    font-weight:600;
+}
+.timPlus_class_list ul li.on a{
+    background-color:#21252e;
+    color:#fff;
+}
+.timPlus_class_list ul li:hover a{
+    color:#fff;
+}
+.timPlus_class_list .class_color{
+    width:14px;
+    height:14px;
+    vertical-align:middle;
+    margin:-2px 5px 0 25px;
+    background:#7d909f;
+}
+
+.timPlus_container{
+    margin-left:240px;
+    padding-top:60px;
+    min-width:760px;
+}
+.contents{
+    width:1000px;
+    margin:0 auto;
+    padding:10px 0 25px;
+}
+.title{
+    font-weight:500;
+    font-size:18px;
+}
+
+.btn>a{
+    display:block;
+    box-sizing:border-box;
+    border:2px solid #6179b7;
+    width:100px;
+    height:40px;
+    line-height:38px;
+    text-align:center;
+    font-size:13px;
+    font-weight:500;
+}
+.class_color{
+    display:inline-block;
+    background:#ccc;
+    border-radius:50%;
+    position:relative;
+}
+.class_list .class_color{
+    width:12px;
+    height:12px;
+    position:absolute;
+    top:50%;
+    left:44px;
+    margin-top:-6px;
+}
+
+.nie_menu>li>a{
+    background:url(../img/common/sub_menu_icon_nie.png) no-repeat left 26px center
+}
+.nie_menu>li>a.on{
+    background:#576170  url(../img/common/sub_menu_icon_nie_check.png) no-repeat left 26px center
+}
+
+/*학생*/
+.timPlus_menu_st>li:nth-child(1)>a{
+    background:url(../img/common/make_class.png) no-repeat center left 25px;
+}
+.timPlus_menu_st>li:nth-child(2)>a{
+    background:url(../img/common/myclass_gray.png) no-repeat center left 25px;
+}
+.timPlus_menu_st>li:nth-child(3)>a{
+    background:url(../img/common/storage_big.png) no-repeat center left 25px;
+}
+.timPlus_menu_st>li:nth-child(3)>a:after,.timPlus_menu>li:nth-child(4)>a:after{
+    display:block;
+}
+.timPlus_menu_st>li:nth-child(2)>a:after,.timPlus_menu>li_st:nth-child(3)>a:after{
+    display:block;
+}
+.timPlus_menu_st>li:nth-child(3) .class_list li a{
+    background:url(../img/common/storage_gray.png) no-repeat center left 42px;
+}
+
+.stu_my{
+    overflow:hidden;
+}
+.stu_my>li{
+    width:100%;
+    overflow: hidden;
+}
+.stu_my li a{
+    display:block;
+    height:80px;
+    color:#c6d3dd;
+    text-align:center;
+    padding-left:20px;
+    line-height:80px;
+    font-size:13px;
+    font-weight:bold;
+}
+.stu_my li:nth-child(1) a{
+    background:#38404e url(../img/common/make_class.png) no-repeat left 60px center;
+}
+.stu_my li:nth-child(1):hover a{
+    background:#38404e url(../img/common/make_class_hover.png) no-repeat left 60px center;
+}
+.stu_my li:nth-child(1)>a.on{
+    background:#2f3643 url(../img/common/make_class_check.png) no-repeat left 60px center;
+}
+
+
+/*수정,삭제*/
+.revise:after{
+    display:block;
+    clear:both;
+    content:''
+}
+.revise li a{
+    float:left;
+    display:block;
+    text-indent:-9999em;
+    width:35px;
+    height:35px;
+    font-size:13px;
+    background-image:url(revise_btn.jpg);
+    background-repeat:no-repeat;
+}
+.revise li .revise_storage{
+    background-position:0 0;
+}
+.revise li .revise_revise{
+    background-position:-35px 0;
+}
+.revise li .revise_delete{
+    background-position:-70px 0;
+}
+/*컨텐츠 내용 부분 기본 css*/
+.title {
+    line-height:18px;
+}
+.class_menu{
+    overflow:hidden;
+}
+.class_name{
+    font-size:18px;
+    font-weight:500;
+    float:left;
+    margin:0px 20px 0px 0;
+    line-height:35px;
+}
+.class_name span{
+    width:14px;
+    height:14px;
+    top:1px;
+    margin-right:6px;
+}
+.class_menu .revise{
+    float:left;
+}
+.class_menu .revise>a{
+    float:left;
+    display:block;
+    height:18px;
+    width:23px;
+    text-indent:-9999em;
+}
+.class_menu .revise .revise_revise{
+    border-right:1px solid #ccc;
+    background:url(../img/common/c_edit.png) no-repeat left center;
+}
+.class_menu .revise .revise_delete{
+    background:url(../img/common/c_delete.png) no-repeat right center;
+}
+/*경고창*/
+.alert_box{
+    display:none;
+    position:fixed;
+    top:50%;
+    left:50%;
+    z-index:9999;
+    background:#fff;
+    width:330px;
+    height:230px;
+    box-sizing:border-box;
+    margin:-115px 0 0 -165px;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+    padding:0 15px;
+}
+.completion .cancle,.warning .cancle,.error .cancle{
+    float:none;
+}
+.completion .cancle a,.warning .cancle a,.error .cancle a{
+    margin:0 auto;
+    width:60px;
+    height:30px;
+    line-height:28px;
+    background:#6179b7;
+    color:#fff;
+}
+.question .btn a{
+    width:60px;
+    height:30px;
+    line-height:26px;
+}
+.question .cancle{
+    float:left;
+    margin-left:50px;
+}
+.question .confirm{
+    float:right;
+    margin-right:50px;
+}
+.question .confirm a{
+    color:#fff;
+    background:#6179b7;
+}
+.question_img{
+    height:106px;
+    border-bottom:1px solid #ededed;
+    background:url(../img/common/alert_confirm.png) no-repeat center center;
+}
+.completion_img{
+    height:106px;
+    border-bottom:1px solid #ededed;
+    background:url(../img/common/alert_check.png) no-repeat center center;
+}
+.error_img{
+    height:106px;
+    border-bottom:1px solid #ededed;
+    background:url(../img/common/alert_error.png) no-repeat center center;
+}
+.warning_img{
+    height:106px;
+    border-bottom:1px solid #ededed;
+    background:url(../img/common/alert_warning.png) no-repeat center center;
+}
+.bg{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.65);
+    top:0;
+    left:0;
+    z-index:9995;
+}
+.fullScreen{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:#000;
+    top:0;
+    left:0;
+    z-index:9999;
+}
+@media screen and (max-width:1300px){
+    .contents{
+        width:750px;
+    }
+    
+}
+
+
+.v_ststudent_info:after{
+	display:block;
+	clear:both;
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    box-sizing:border-box;
+    border:2px solid #ededed;
+    background:#fff url(/img/common/anonymity.png) no-repeat center;
+    cursor:pointer;
+
+}

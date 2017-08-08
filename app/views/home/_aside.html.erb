@@ -1,0 +1,16 @@
+<aside class="timPlus_aside"><!--aside (좌측 상시 메뉴)-->
+    <nav class="timPlus_nav1">
+        <div class="timPlus_my">
+            <a href="/teacher/mission_select.asp">카테고리 만들기</a>
+        </div>
+        <div class="timPlus_class_list">
+            <ul>
+                <% @categories.each do |c| %>
+                    <li id="menu">
+                        <a href="<%=url_for(home_path(c))%>"><span class="class_color" data-color="#58c9b9"></span><%= c.name %></a>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+    </nav>
+</aside><!--aside end--> 

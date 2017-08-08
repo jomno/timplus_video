@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
+  get 'home/new' => 'home#new'
+  post 'home/create' => 'home#create'
   root 'home#index'
   resources :home, only: [:index, :show]
   scope :path => 'home/:home_id' do

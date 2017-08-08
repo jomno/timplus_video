@@ -79,4 +79,5 @@ class CurriculumsController < ApplicationController
     def curriculum_params
       params.require(:curriculum).permit(:title, :description)
     end
+    
 end

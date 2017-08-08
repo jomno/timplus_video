@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'activeadmin', github: 'activeadmin'
+gem 'cancancan'
+gem 'rolify'
 gem 'rails-observers'
 gem 'yt', '~> 0.13.7'
 gem 'faker'

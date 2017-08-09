@@ -6,24 +6,20 @@
               <li><a href="http://test.timplus.co.kr/teacher/class_mission_main.asp">수업</a></li>
               <li><a href="http://test.timplus.co.kr/teacher/class_management.asp">반 관리</a></li>
               <li><a href="http://test.timplus.co.kr/teacher/nie.asp">NIE</a></li>
-              <% if user_signed_in? %>
-                <li><span><%= current_user.name%></span></li>
-                <li><%= link_to "로그아웃",destroy_user_session_path, method: :delete %></li>
-                <li><%= link_to "rails_db",rails_db_path%></li>
-                <li><%= link_to("admin", admin_root_path) if current_user.has_role? :admin %></li>
-              <% else %>
-                <li><%= link_to "로그인",new_user_session_path %></li>
-              <% end %>
 <!--                    <li><a href="#">보관함</a></li>-->
           </ul>
+          
           <div class="news">
               <div class="setting">
-                  <a href="#"><div class="profile_image" data-upic="/Data/10/member/IMG_6955.GIF"></div></a>
-                  <ul class="setting_menu">
-                      <li><a href="http://test.timplus.co.kr/teacher/teacher_profile.asp"><span></span>개인정보수정</a></li>
-                      <li><a href="http://test.timplus.co.kr/teacher/timplus_qna.asp"><span></span>이메일 문의</a></li>
-                      <li><a href="http://test.timplus.co.kr/teacher/announcement.asp"><span></span>공지사항</a></li>
-                      <li><a href="http://test.timplus.co.kr/process/logoutProc.asp"><span></span>로그아웃</a></li>
+                  <a href="#" class=""><div class="profile_image" data-upic="/Data/10/member/IMG_6955.GIF" style="background: url(&quot;/Data/10/member/IMG_6955.GIF&quot;) center center / cover no-repeat rgb(255, 255, 255);"></div></a>
+                  <ul class="setting_menu" style="display: none;">
+                    <% if user_signed_in? %>
+                      <li><%= link_to "<span></span>로그아웃".html_safe,destroy_user_session_path, method: :delete %></li>
+                      <li><%= link_to "<span></span>rails_db".html_safe,rails_db_path%></li>
+                      <li><%= link_to("<span></span>admin".html_safe, admin_root_path) if current_user.has_role? :admin %></li>
+                    <% else %>
+                      <li><%= link_to "<span></span>로그인".html_safe,new_user_session_path %></li>
+                    <% end %>
                   </ul>
               </div>
           </div>

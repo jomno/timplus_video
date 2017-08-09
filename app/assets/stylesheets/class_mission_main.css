@@ -39,7 +39,7 @@ h1,h2,h3,h4,h6,a,p,span,div,section,header,article,input,i,ul,ol,li,table,th,td{
 .sorting_btn li a{
     display:table;
     overflow:hidden;
-    width:242px;
+    width:192px;
     height:50px;
     border:1px solid #dadada;
     box-sizing:border-box;

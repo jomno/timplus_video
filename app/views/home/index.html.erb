@@ -3,26 +3,33 @@
         <span class="class_color" data-color="#58c9b9" style="background: rgb(88, 201, 185);"></span>
         <%= @title %>
         <!--<div class="btn right swal">커리큘럼 만들기</div>-->
-        <%=link_to('커리큘럼 만들기',new_curriculum_path(home_id: @category.id),class: "btn2 right") unless action_name=="index"%>
+        <%=link_to('커리큘럼 만들기',new_curriculum_path(home_id: @category.id),class: "btn2 right",style: "margin-top: 0px;") unless action_name=="index"%>
         <!--<a href="<%#=new_curriculum_path(home_id: @category.id)%>" class="btn right" data-sweet-alert-confirm="Are you Sure?">커리큘럼 만들기</a>-->
     </div>
+    <ul class="sorting_btn">
+        <li><a href="#" class="on"><p>전체</p><p class="count0">5</p></a></li>
+        <li><a href="#"><p>무료</p><p class="count1">0</p></a></li>
+        <li><a href="#"><p>유료</p><p class="count2">1</p></a></li>
+        <li><a href="#" ><p>나의 강의</p><p class="count3">4</p></a></li>
+        <li><a href="#"><p>수강 강의</p><p class="count4">0</p></a></li>
+    </ul>
     <div class="contents_box">
-      <div class="class_mission">
+      <!--<div class="class_mission">-->
         <% @curriculums.each do |curriculum| %>
-           <div class="class_misson" id="mission_2284" style="display: block;"><!--class_misson (수업목록)-->
-            <a  href="<%=curriculum_path(curriculum.category.id,curriculum.id)%>">
+           <div class="box class_misson" id="mission_2284" style="display: inline-block;"><!--class_misson (수업목록)-->
+            <a class="content" href="<%=curriculum_path(curriculum.category.id,curriculum.id)%>">
                 <table class="misson_info">
                    <tbody>
                         <tr>
                             <th class="misson_type">
-                                <span class="misson_type_name type2" style="padding-left:6px;padding-right:6px; width:auto;"><%= curriculum.user.email %></span>
+                                <span class="misson_type_name type2" style="padding-left:6px;padding-right:6px; width:auto;">무료<%#= curriculum.user.email %></span>
                                 <span>|</span>
-                                <span><%= curriculum.created_at.strftime('%-d %B %Y %H:%M:%S') %></span>
+                                <span><%= curriculum.title %><%#= curriculum.created_at.strftime('%-d %B %Y %H:%M:%S') %></span>
                             </th>
                         </tr>
                         <tr class="misson_title">
                            <td>
-                               <p><%= curriculum.title %></p>
+                               <p><%= curriculum.description %></p>
                             </td>
                         </tr>
                     </tbody>
@@ -31,7 +38,7 @@
         </div>
         <% end %>
        
-      </div>
+      <!--</div>-->
     </div>
   </section>
 

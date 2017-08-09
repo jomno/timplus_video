@@ -2928,7 +2928,7 @@ veiw_file .ps-container > .ps-scrollbar-y-rail {
     margin-bottom:19px;
 }
 .no_score,.no_body{
-	margin-top:40px;
+	margin-top:10px;
 }
 .no_score>p:nth-child(1){
     text-indent:-9999em;

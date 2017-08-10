@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'activeadmin', github: 'activeadmin'
+gem 'jquery-ui-rails'
+gem 'activeadmin'
 gem 'cancancan'
 gem 'rolify'
 gem 'rails-observers'

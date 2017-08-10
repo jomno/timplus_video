@@ -7,7 +7,7 @@
     min-width:1007px;
     min-height:100%;
     z-index:10;
-    background:url(body_bg.gif);
+    background:url(asset-path('body_bg.gif'));
     overflow-x:hidden;
 }
 .timPlus_aside{

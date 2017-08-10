@@ -27,7 +27,7 @@ html,body{
     text-align:center;
     line-height:57px;
     text-indent:-9999em;
-    background:url(logo_white.png) no-repeat center;
+    background:url(asset_path('logo_white.png')) no-repeat center;
 }
 .timPlus_header .timPlus_nav{
     margin-left:240px;
@@ -95,43 +95,43 @@ html,body{
 }
 .main_menu li:nth-child(1) a{
    padding-left:36px;
-   background-image:url(main1.png);
+   background-image:url(asset_path('main1.png'));
 }
 .main_menu li:nth-child(2) a{
    padding-left:39px;
-   background-image:url(main2.png);
+   background-image:url(asset_path('main2.png'));
 }
 .main_menu li:nth-child(3) a{
    padding-left:48px;
-   background-image:url(main3.png);
+   background-image:url(asset_path('main3.png'));
 }
 .main_menu li:nth-child(4) a{
    padding-left:36px;
-   background-image:url(main4.png);
+   background-image:url(asset_path('main4.png'));
 }
 .main_menu li:nth-child(5) a{
    padding-left:36px;
-   background-image:url(main5.png);
+   background-image:url(asset_path('main5.png'));
 }
 .main_menu li:nth-child(1) a:hover,
 .main_menu li:nth-child(1) a.on{
-   background-image:url(main1_orange.png);
+   background-image:url(asset_path('main1_orange.png'));
 }
 .main_menu li:nth-child(2) a:hover,
 .main_menu li:nth-child(2) a.on{
-   background-image:url(main2_orange.png);
+   background-image:url(asset_path('main2_orange.png'));
 }
 .main_menu li:nth-child(3) a:hover,
 .main_menu li:nth-child(3) a.on{
-   background-image:url(main3_orange.png);
+   background-image:url(asset_path('main3_orange.png'));
 }
 .main_menu li:nth-child(4) a:hover,
 .main_menu li:nth-child(4) a.on{
-   background-image:url(main4_orange.png);
+   background-image:url(asset_path('main4_orange.png'));
 }
 .main_menu li:nth-child(5) a:hover,
 .main_menu li:nth-child(5) a.on{
-   background-image:url(main5_orange.png);
+   background-image:url(asset_path('main5_orange.png'));
 }
 .news{
     float:right;

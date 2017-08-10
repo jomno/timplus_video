@@ -2935,7 +2935,7 @@ veiw_file .ps-container > .ps-scrollbar-y-rail {
     margin:110px auto 24px;
     width:128px;
     height:82px;
-    background:url(dochi_lying.png) no-repeat center;
+    background:url(asset-path('dochi_lying.png')) no-repeat center;
 }
 .no_score>p:nth-child(2){
     margin-bottom:20px;

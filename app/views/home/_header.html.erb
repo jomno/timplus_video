@@ -11,7 +11,11 @@
           
           <div class="news">
               <div class="setting">
-                  <a href="#" class=""><div class="profile_image" data-upic="/Data/10/member/IMG_6955.GIF" style="background: url(&quot;/Data/10/member/IMG_6955.GIF&quot;) center center / cover no-repeat rgb(255, 255, 255);"></div></a>
+                  <a href="#" class="">
+                    <!--<div class="profile_image" data-upic="/Data/10/member/IMG_6955.GIF" style="background: url(&quot;/Data/10/member/IMG_6955.GIF&quot;) center center / cover no-repeat rgb(255, 255, 255);">-->
+                    <!--</div>-->
+                  </a>
+                  
                   <ul class="setting_menu" style="display: none;">
                     <% if user_signed_in? %>
                       <li><%= link_to "<span></span>로그아웃".html_safe,destroy_user_session_path, method: :delete %></li>

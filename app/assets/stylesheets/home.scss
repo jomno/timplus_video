@@ -68,17 +68,36 @@
     margin-left: 5px;
     width: 32%; /* 원하는 너비 */
 }
- 
-.box:before {
+.inner-box {
     content: "";
     display: block;
+    position:relative;
     padding-top: 100%; /* 1:1 비율 */
+    overflow:hidden;
+    margin-bottom: 10px;
 }
- 
+.inner-box>a {
+    display: block;
+    padding: 20px 16px 16px;
+}
+.box:before {
+    // content: "";
+    // display: block;
+    // position:relative;
+    // padding-top: 100%; /* 1:1 비율 */
+    // overflow:hidden;
+    // padding-top: 100%; /* 1:1 비율 */
+    // overflow:hidden;
+}
+
 .content {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+}
+.mission_image>img{
+    max-width:100%;
+    max-height:auto;
 }

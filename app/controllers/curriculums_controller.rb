@@ -31,6 +31,10 @@ class CurriculumsController < ApplicationController
     @curriculum = Curriculum.new(curriculum_params)
     @curriculum.category = @category
     @curriculum.user=current_user
+    uploader=ImageUploader.new
+    puts params.require(:curriculum).permit(:image)[:image]
+    uploader.store!(params.require(:curriculum).permit(:image)[:image])
+    @curriculum.image=uploader.url
     respond_to do |format|
       if @curriculum.save
         format.html { redirect_to home_path(@category.id), notice: 'Curriculum was successfully created.' }

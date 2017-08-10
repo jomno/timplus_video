@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'carrierwave'
+gem 'fog-aws'
 gem 'jquery-ui-rails'
 gem 'activeadmin'
 gem 'cancancan'

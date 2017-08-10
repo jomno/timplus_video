@@ -17,7 +17,8 @@
       <!--<div class="class_mission">-->
         <% @curriculums.each do |curriculum| %>
            <div class="box class_misson" id="mission_2284" style="display: inline-block;"><!--class_misson (수업목록)-->
-            <a class="content" href="<%=curriculum_path(curriculum.category.id,curriculum.id)%>">
+            <div class="inner-box">
+                <a class="content" href="<%=curriculum_path(curriculum.category.id,curriculum.id)%>">
                 <table class="misson_info">
                    <tbody>
                         <tr>
@@ -32,10 +33,17 @@
                                <p><%= curriculum.description %></p>
                             </td>
                         </tr>
+                        <tr>
+                            <td class="mission_image">
+                                <img src="<%= curriculum.image.nil?? "/assets/classroom.jpg" : curriculum.image %>"></img>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </a>
-        </div>
+            </div> 
+             
+           </div>
         <% end %>
        
       <!--</div>-->

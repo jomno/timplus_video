@@ -6,7 +6,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable
         # , :validatable
   after_create :assign_default_role
-
+  
+  scope :seller, -> {with_role :seller}
+  scope :admin, -> {with_role :admin}
+  scope :default, -> {with_role :default}
   def assign_default_role
     self.add_role(:default) if self.roles.blank?
   end

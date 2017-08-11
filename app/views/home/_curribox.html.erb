@@ -1,0 +1,29 @@
+<% curriculums.each do |curriculum| %>
+       <div class="box class_misson" id="mission_2284" style="display: inline-block;"><!--class_misson (수업목록)-->
+        <div class="inner-box">
+            <a class="content" href="<%=curriculum_path(curriculum.category.id,curriculum.id)%>">
+            <table class="misson_info">
+               <tbody>
+                    <tr>
+                        <th class="misson_type">
+                            <span class="misson_type_name type2" style="padding-left:6px;padding-right:6px; width:auto;">무료<%#= curriculum.user.email %></span>
+                            <span>|</span>
+                            <span><%= curriculum.title %><%#= curriculum.created_at.strftime('%-d %B %Y %H:%M:%S') %></span>
+                        </th>
+                    </tr>
+                    <tr class="misson_title">
+                       <td>
+                           <p><%= curriculum.description %></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="mission_image">
+                            <img src="<%= curriculum.image.nil?? "/assets/classroom.jpg" : curriculum.image %>"></img>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </a>
+        </div>
+       </div>
+    <% end %>

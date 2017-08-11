@@ -184,7 +184,7 @@
     width:35px;
     height:35px;
     font-size:13px;
-    background-image:url(revise_btn.jpg);
+    background-image:url(asset-path('revise_btn.jpg'));
     background-repeat:no-repeat;
 }
 .revise li .revise_storage{

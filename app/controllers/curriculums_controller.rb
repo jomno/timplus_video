@@ -1,4 +1,5 @@
 class CurriculumsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_curriculum, only: [:show, :edit, :update, :destroy]
   before_action :set_category
 

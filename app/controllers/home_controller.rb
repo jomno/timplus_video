@@ -1,9 +1,9 @@
 class HomeController < ApplicationController
+  # load_and_authorize_resource
   before_action :set_category,:sort, only: [:show]
   def index
     @curriculums=Curriculum.all
     @title = "전체 커리큘럼 보기"
-    
   end
   def show
     # @curriculums=@category.curriculums
@@ -14,7 +14,6 @@ class HomeController < ApplicationController
         format.js
       end
     end
-    
   end
   def create
     @category=Category.new(category_params)
@@ -23,9 +22,11 @@ class HomeController < ApplicationController
     else
       redirect_to root_path,alert: "카테고리 생성을 실패했습니다."
     end
+    authorize! :create, @category
   end
   def new
     @category= Category.new
+    authorize! :create, @category
   end
   private
   def set_category

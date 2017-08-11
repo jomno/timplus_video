@@ -1,3 +1,6 @@
 (function($) {
-    alert("<%=@curriculums%>");
+    var html = "<%= escape_javascript(render 'curribox', curriculums: @curriculums) %>";
+    $('.contents_box').empty();
+    $('.contents_box').append(html);
+    // alert("<%=current_user.has_role? :admin%>")
 })(jQuery)

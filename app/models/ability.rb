@@ -9,6 +9,12 @@ class Ability
         can :manage, :all
     else
         cannot :manage, ActiveAdmin::Page
+        cannot :create, Category
+        # if user.has_role? :seller
+          
+        # else
+          
+        # end
     end
     #
     # The first argument to `can` is the action you are giving the user

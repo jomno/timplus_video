@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'toastrjs-rails'
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'jquery-ui-rails'

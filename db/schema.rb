@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170810084847) do
+ActiveRecord::Schema.define(version: 20170814022906) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 20170810084847) do
     t.datetime "updated_at",    null: false
     t.integer  "curriculum_id"
     t.string   "uid"
+    t.text     "videolink2"
+    t.boolean  "ytb"
   end
 
   add_index "articles", ["curriculum_id"], name: "index_articles_on_curriculum_id"
@@ -74,6 +76,7 @@ ActiveRecord::Schema.define(version: 20170810084847) do
     t.datetime "published_at"
     t.text     "description"
     t.string   "image"
+    t.integer  "price"
   end
 
   add_index "curriculums", ["category_id"], name: "index_curriculums_on_category_id"

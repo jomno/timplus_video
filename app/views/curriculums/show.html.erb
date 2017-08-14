@@ -39,41 +39,45 @@
                <div class="misson_text"><%=article.description%></div>
                <div class="file_veiw">
                     <ul class="img_thumbnail">
-                      <div style="position:relative;height:0;padding-bottom:75.0%">
-                        <iframe src="https://www.youtube.com/embed/<%=article.uid%>?ecver=2" width="480" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen>
-                        </iframe>
-                      </div>
+                        <% if article.ytb==true %>
+                            <div style="position:relative;padding-bottom:75.0%">
+                                <iframe class="embed" src="https://www.youtube.com/embed/<%=article.uid%>?enablejsapi=1" allowfullscreen="allowfullscreen" frameborder="0" width="480" height="360" style="position:absolute;width:100%;height:100%;"></iframe>
+                            </div>
+                        <% elsif article.videolink2!=nil %>
+                            <div>
+                                <video class="embed" src="<%=article.videolink2%>" width="100%" height="360" controls="controls" preload="auto" data-embedplayer-id="" ></video>
+                            </div>
+                        <% end %>
                     </ul>
                     <ul class="file_thumbnail">
 
                     </ul>
                 </div>
-
-                <div class="misson_btn">
-                    <div class="mission_menu ">
-                        <ul>
-                            <li><a href="#">팀원보기</a></li>
-                            <li><a href="#">과제관리</a></li>
+   <!--            <div class="misson_btn">-->
+   <!--                 <div class="mission_menu ">-->
+   <!--                     <ul>-->
+   <!--                         <li><a href="#">팀원보기</a></li>-->
+   <!--                         <li><a href="#">과제관리</a></li>-->
 			
-			<li><a href="#">수업공개</a></li>
+			<!--<li><a href="#">수업공개</a></li>-->
 			
-                            <li><a href="#">보관함</a></li>
-                            <li><a href="#">즐겨찾기</a></li>
+   <!--                         <li><a href="#">보관함</a></li>-->
+   <!--                         <li><a href="#">즐겨찾기</a></li>-->
                             
-			<li><a href="/teacher/mission_revice_discuss.asp?mission_idx=2283&amp;class_idx=221" class="revise_revise">수정</a></li>
+			<!--<li><a href="/teacher/mission_revice_discuss.asp?mission_idx=2283&amp;class_idx=221" class="revise_revise">수정</a></li>-->
 				
-                            <li><a href="#">삭제</a></li>
-                        </ul>
-                    </div>
-                    <div class="lesson_btn">
-                       <ul>
+   <!--                         <li><a href="#">삭제</a></li>-->
+   <!--                     </ul>-->
+   <!--                 </div>-->
+   <!--                 <div class="lesson_btn">-->
+   <!--                    <ul>-->
 
-		    <li><a href="/teacher_lesson/lesson_mission_yesOrNo.asp?mission_idx=2283&amp;class_idx=221&amp;u=1" class="start"><span></span>참여율</a></li>
-		   <li><a href="/teacher_lesson/lesson_mission_yesOrNo.asp?mission_idx=2283&amp;class_idx=221&amp;u=2"><span></span>학생과제</a></li>
-		   <li><a href="/teacher_lesson/lesson_mission_yesOrNo.asp?mission_idx=2283&amp;class_idx=221&amp;u=4"><span></span>DATA시각화</a></li>
-                       </ul>
-                    </div>
-                </div>
+		 <!--   <li><a href="/teacher_lesson/lesson_mission_yesOrNo.asp?mission_idx=2283&amp;class_idx=221&amp;u=1" class="start"><span></span>참여율</a></li>-->
+		 <!--  <li><a href="/teacher_lesson/lesson_mission_yesOrNo.asp?mission_idx=2283&amp;class_idx=221&amp;u=2"><span></span>학생과제</a></li>-->
+		 <!--  <li><a href="/teacher_lesson/lesson_mission_yesOrNo.asp?mission_idx=2283&amp;class_idx=221&amp;u=4"><span></span>DATA시각화</a></li>-->
+   <!--                    </ul>-->
+   <!--                 </div>-->
+   <!--             </div>-->
             </div>
         </div>
         <% end %>
@@ -85,9 +89,33 @@
     
   <%= link_to 'New Article', new_article_path(@category.id,@curriculum.id),class: "btn2 right" %>
   <%= link_to 'Back', home_path(@category.id),class: "btn2" %>
-</section>
-
+ </section>
+    <script type="text/javascript" src="/embed/embedplayer.js"></script>
+	<script type="text/javascript" src="/embed/youtube.js"></script>
+	<script type="text/javascript" src="/embed/vimeo.js"></script>
+	<script type="text/javascript" src="/embed/twitch.js"></script>
+	<script type="text/javascript" src="/embed/soundcloud.js"></script>
+	<script type="text/javascript" src="/embed/dailymotion.js"></script>
+	<script type="text/javascript" src="/embed/html5.js"></script>
+    <script>
+    $('.embed').on('embedplayer:statechange', function (event) {
+    	console.log('state:', event.state);
+    }).on('embedplayer:error', function (event) {
+    	console.error('error:', event.error);
+    }).on('embedplayer:durationchange', function (event) {
+    	console.log('duration:', event.duration);
+    }).on('embedplayer:volumechange', function (event) {
+    	console.log('volume:', event.volume);
+    }).on('embedplayer:timeupdate', function (event) {
+    	console.log('currentTime:', event.currentTime);
+    }).on('embedplayer:ready', function (event) {
+    	console.log('link:', $(this).embedplayer('link'));
+    }).embedplayer('listen'); // enable all events
+    
+    // $('#embed').embedplayer('play');
+    </script>
 <script>
+// 
  $(function(){
 	 //미션 목록 펼치고 닫혀지는 부분
     var class_misson = $('.class_misson');
@@ -97,7 +125,9 @@
         e.preventDefault();
         var t = $(this);
         var m = $(this).next('div');
-	   if(m.is(':visible')){
+	    if(m.is(':visible')){
+	        //그거의 영상을 멈춤시켜라
+	        m.children().children().children().children().embedplayer('pause');
 			m.slideUp(500);
 		}else{
 // 			document.FMissionList.mission_idx.value = t.parent().attr('id').replace('mission_','');
@@ -107,6 +137,8 @@
 					scrollTop:top-70
 				});
 			}).parent().siblings().children('div').slideUp(500);
+			$(".embed").embedplayer('pause');
+			m.children().children().children().children().embedplayer('play');
 			t.children().children().children('.misson_title').children().children('span').addClass('on');
 		}
     });

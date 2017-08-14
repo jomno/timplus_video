@@ -31,12 +31,16 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.curriculum = @curriculum
+    uploader=VideoUploader.new
+    uploader.store!(params.require(:article).permit(:videolink2)[:videolink2])
+    @article.videolink2=uploader.url
+    puts @article.videolink2
     respond_to do |format|
       if @article.save
         format.html { redirect_to curriculum_path(@category.id,@curriculum.id), notice: 'Article was successfully created.' }
         format.json { render :show, status: :created, location: @article }
       else
-        format.html { render :new }
+        format.html { redirect_to curriculum_path(@category.id,@curriculum.id), notice: @article.errors.full_messages }
         format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end

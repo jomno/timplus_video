@@ -5,10 +5,50 @@
           <%= f.text_field :title,{class: "make_title_text",placeholder: "커리큘럼 제목을 입력해주세요.",maxlength: "50"} %>
           <span class="title_len">0/50자</span>
           <%= f.text_area :description,{class: "make_text",placeholder: "커리큘럼 내용을 입력해주세요."} %>
-          <%= f.file_field :image %>
+          <%= f.file_field :image,id: "ssi-upload" %>
           <div class="page_btn" style="margin-top:20px;">
               <p class="btn"><%= link_to '취소', home_path(@category.id) %></p>
-              <p class="btn"><%=f.submit '제출'%></p> 
+              <p class="btn"><%=f.submit '제출',class: "curriculum",id: "ssi-uploadBtn"%></p> 
           </div>
       <% end %>
 </section>
+<script>
+    var notifyOptions = {
+        iconButtons: {
+            className: 'fa fa-question about',
+            method: function (e, modal) {
+                ssi_modal.closeAll('notify');
+                var btn = $(this).addClass('disabled');
+                ssi_modal.dialog({
+                    onClose: function () {
+                        btn.removeClass('disabled')
+                    },
+                    onShow: function () {
+                    },
+                    okBtn: {className: 'btn btn-primary btn-sm'},
+                    title: 'ssi-modal',
+                    content: 'ssi-modal is an open source modal window plugin that only depends on jquery. It has many options and it\'s super flexible, maybe the most flexible modal out there... For more details click <a class="sss" href="http://ssbeefeater.github.io/#ssi-modal" target="_blank">here</a>',
+                    sizeClass: 'small',
+                    animation: true
+                });
+            }
+        }
+    };
+    
+    
+    var data = ""
+    $('#ssi-upload').ssi_uploader({
+        beforeUpload: function () {
+          
+        },
+        dropZone: false,
+        url: '<%=curriculums_path%>',
+        data: data,
+        maxFileSize: 1000,
+        maxNumberOfFiles: 1,
+        //,
+  //        allowed: ['jpg', 'gif', 'txt', 'png', 'pdf','zip']
+  //        ,onEachUpload:function(file){console.log(file)}
+      });
+      
+</script>

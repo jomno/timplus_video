@@ -8,9 +8,9 @@
     </div>
     <% unless action_name=="index"%>
     <ul class="sorting_btn">
-        <li><a href="?sort=1" class="on" data-remote="true"><p>전체</p><p class="count0">5</p></a></li>
-        <li><a href="?sort=2" data-remote="true"><p>무료</p><p class="count1">0</p></a></li>
-        <li><a href="?sort=3" data-remote="true"><p>유료</p><p class="count2">1</p></a></li>
+        <li><a href="?sort=1" class="on" data-remote="true"><p>전체</p><p class="count0"><%=@curriculums.length%></p></a></li>
+        <li><a href="?sort=2" data-remote="true"><p>무료</p><p class="count1"><%=@curriculums.length%></p></a></li>
+        <li><a href="?sort=3" data-remote="true"><p>유료</p><p class="count2">13</p></a></li>
         <li><a href="?sort=4" data-remote="true"><p>나의 강의</p><p class="count3">4</p></a></li>
         <li><a href="?sort=5" data-remote="true"><p>수강 강의</p><p class="count4">0</p></a></li>
     </ul>

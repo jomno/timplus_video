@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   # load_and_authorize_resource
   before_action :set_category,:sort, only: [:show]
   def index
-    @curriculums=Curriculum.all
+    @curriculums=Curriculum.where.not(published_at: nil)
     @title = "전체 커리큘럼 보기"
   end
   def show
@@ -39,14 +39,14 @@ class HomeController < ApplicationController
     set_category
     if params[:sort]
       case params[:sort].to_i
-        when 1 then @curriculums=@category.curriculums # 전체
-        when 2 then @curriculums=@category.curriculums # 무료
-        when 3 then @curriculums=@category.curriculums # 유료
+        when 1 then @curriculums=@category.curriculums.where.not(published_at: nil) # 전체
+        when 2 then @curriculums=@category.curriculums.where.not(published_at: nil) # 무료
+        when 3 then @curriculums=@category.curriculums.where.not(published_at: nil) # 유료
         when 4 then @curriculums=@category.curriculums.where(user_id: current_user) # 나의 강의
-        when 5 then @curriculums=@category.curriculums # 수강 강의
+        when 5 then @curriculums=@category.curriculums.where.not(published_at: nil) # 수강 강의
       end
     else
-      @curriculums=@category.curriculums
+      @curriculums=@category.curriculums.where.not(published_at: nil)
     end
   end
 end

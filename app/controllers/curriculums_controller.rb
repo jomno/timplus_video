@@ -33,7 +33,7 @@ class CurriculumsController < ApplicationController
     @curriculum.category = @category
     @curriculum.user=current_user
     uploader=ImageUploader.new
-    puts params.require(:curriculum).permit(:image)[:image]
+    # puts params.require(:curriculum).permit(:image)[:image]
     uploader.store!(params.require(:curriculum).permit(:image)[:image])
     @curriculum.image=uploader.url
     respond_to do |format|
@@ -50,6 +50,9 @@ class CurriculumsController < ApplicationController
   # PATCH/PUT /curriculums/1
   # PATCH/PUT /curriculums/1.json
   def update
+    uploader=ImageUploader.new
+    uploader.store!(params.require(:curriculum).permit(:image)[:image])
+    @curriculum.image=uploader.url
     respond_to do |format|
       if @curriculum.update(curriculum_params)
         format.html { redirect_to curriculum_path(@category.id,@curriculum.id), notice: 'Curriculum was successfully updated.' }

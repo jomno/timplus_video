@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
     uploader=VideoUploader.new
     uploader.store!(params.require(:article).permit(:videolink2)[:videolink2])
     @article.videolink2=uploader.url
-    puts @article.videolink2
+    # puts @article.videolink2
     respond_to do |format|
       if @article.save
         format.html { redirect_to curriculum_path(@category.id,@curriculum.id), notice: 'Article was successfully created.' }

@@ -18,7 +18,7 @@
                     </tr>
                     <tr>
                         <td class="mission_image">
-                            <img src="<%= curriculum.image.nil?? "/assets/classroom.jpg" : curriculum.image %>"></img>
+                            <img src="<%= curriculum.image.nil?? asset_path('classroom.jpg') : curriculum.image %>"></img>
                         </td>
                     </tr>
                 </tbody>

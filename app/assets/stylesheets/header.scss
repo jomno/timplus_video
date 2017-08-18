@@ -1,5 +1,5 @@
 /*기본 세팅*/
-@import url(reset.scss);
+@import url(reset);
 @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
 body{font-family:'나눔 고딕','Nanum Gothic','돋움','Dotum','sans-serif';}
 a{letter-spacing:0.25px;}
@@ -263,10 +263,10 @@ html,body{
     color:#313e50;
 }
 .setting>a:hover{
-    background:#7d909f url(../img/common/h_up.png) no-repeat right 15px center;
+    background:#7d909f url(asset_path('h_up.png')) no-repeat right 15px center;
 }
 .setting>a.on{
-    background:#7d909f url(../img/common/h_up.png) no-repeat right 15px center;
+    background:#7d909f url(asset_path('h_up.png')) no-repeat right 15px center;
 }
 .setting_menu{
     position:absolute;
@@ -319,16 +319,16 @@ html,body{
     vertical-align:middle;
 }
 .setting_menu li:nth-child(1) span{    
-    background:url(/img/common/p_personal.png) no-repeat center;
+    background:url(asset_path('p_personal.png')) no-repeat center;
 }
 /* .setting_menu li:nth-child(2) span{    
     background:url(/img/common/p_coupon.png) no-repeat center;
 } */
 .setting_menu li:nth-child(2) span{    
-    background:url(/img/common/p_email.png) no-repeat center;
+    background:url(asset_path('p_email.png')) no-repeat center;
 }
 .setting_menu li:nth-child(3) span{    
-    background:url(/img/common/p_announce.png) no-repeat center;
+    background:url(asset_path('p_announce.png')) no-repeat center;
 }
 .setting_menu li:nth-child(4) span{    
     background:url(/img/common/p_logout.png) no-repeat center;

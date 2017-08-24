@@ -1,3 +1,5 @@
+require 'net/http'
+require 'json'
 class HomeController < ApplicationController
   # load_and_authorize_resource
   before_action :set_category,:sort, only: [:show]
@@ -13,6 +15,19 @@ class HomeController < ApplicationController
       respond_to do |format|
         format.js
       end
+    end
+  end
+  def login
+    id=params[:id]
+    password=params[:password]
+    tbluser = TblUser.find_by(USER_ID: id, USER_PASS2: password)
+    userData={email: id, password: password, password_confirmation: password}
+    if tbluser.nil?
+      redirect_to root_path,alert: "계정이 없습니다. 팀플러스에서 먼저 가입해주세요."
+    else
+      user = User.find_or_create_by(email: id)
+      sign_in(user, scope: :user)
+      redirect_to root_path,alert: "성공적으로 로그인되었습니다."
     end
   end
   def create

@@ -4,6 +4,7 @@
   <title>Workspace</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css" />
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -15,11 +16,7 @@
       <%= yield %>
     </div>
   </div>
-<script>
-// $("#menu-toggle").click(function(e) {
-//     e.preventDefault();
-//     $("#wrapper").toggleClass("toggled");
-// });
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.common.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.js"></script>
 </body>
 </html>

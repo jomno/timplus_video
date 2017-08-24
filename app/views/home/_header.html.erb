@@ -21,10 +21,38 @@
                       <li><%= link_to "<span></span>rails_db".html_safe,rails_db_path%></li>
                       <li><%= link_to("<span></span>admin".html_safe, admin_root_path) if current_user.has_role? :admin %></li>
                     <% else %>
-                      <li><%= link_to "<span></span>로그인".html_safe,new_user_session_path %></li>
+                      <li><%= link_to "<span></span>로그인".html_safe,'#', id: "login"%></li>
                     <% end %>
                   </ul>
               </div>
           </div>
       </nav>
   </header>
+  <script>
+    $('#login').click(function(e){
+      e.preventDefault();
+      swal({
+        title: '로그인',
+        type: "success",
+        html:
+          '<label for="male">ID</label>'+
+          '<input id="swal-input1" class="swal2-input">' +
+          '<label for="male">PASSWORD</label>'+
+          '<input id="swal-input2" class="swal2-input">',
+        preConfirm: function () {
+          return new Promise(function (resolve) {
+            resolve([
+              $('#swal-input1').val(),
+              $('#swal-input2').val()
+            ])
+          })
+        },
+        onOpen: function () {
+          $('#swal-input1').focus()
+        }
+      }).then(function (result) {
+        location.replace('/home/login?id=' + result[0]+'&password=' + result[1]);
+        // swal(JSON.stringify(result))
+      }).catch(swal.noop)
+    })
+  </script>

@@ -5,25 +5,45 @@
 #   gem 'sqlite3'
 #
 default: &default
+  adapter: mysql2
+  encoding: utf8
+  database: <%= ENV['TPL_DB_NAME'] %>
+  username: <%= ENV['TPL_USERNAME'] %>
+  password: <%= ENV['TPL_PASSWORD'] %>
+  host: <%= ENV['TPL_HOSTNAME'] %>
+  port: <%= ENV['TPL_PORT'] %>
+
+default2: &default2
   adapter: sqlite3
   pool: 5
   timeout: 5000
-
+  
+user_table:
+  adapter: mysql2
+  encoding: utf8
+  database: <%= ENV['TPL_USER_DB_NAME'] %>
+  username: <%= ENV['TPL_USERNAME'] %>
+  password: <%= ENV['TPL_PASSWORD'] %>
+  host: <%= ENV['TPL_HOSTNAME'] %>
+  port: <%= ENV['TPL_PORT'] %>
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: timplus_video_1
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: timplus_video_test
+
 
 # production:
 #   <<: *default
-#   database: db/production.sqlite3
+#   database: timplus_video
+#   username: dgulion
+#   password: 1234
 production:
-  <<: *default
+  <<: *default2
   adapter: postgresql
   encoding: unicode

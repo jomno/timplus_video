@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   get 'home/new' => 'home#new'
   post 'home/create' => 'home#create'
+  get 'home/login' => 'home#login'
   root 'home#index'
   resources :home, only: [:index, :show]
   scope :path => 'home/:home_id' do
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
+
     
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

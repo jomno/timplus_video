@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'mysql2'
 gem 'toastrjs-rails'
 gem 'carrierwave'
 gem 'fog-aws'
